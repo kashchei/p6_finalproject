@@ -10,10 +10,10 @@ function draw(data) {
 
     d3.select("body")
       .append("h2")
-      .text("Export and GDP Numbers in 2010")
+      .text("GDP and Economic Sectors in SEA (average past 10 years)")
     d3.select("body")
       .append("p")
-      .text("In the book 'How Asia Works' from 2013 J.Studwell makes the argument for that the Asian Tigers - Taiwan, South Korea, Singapore, and Hong Kong made their impressive steps forward by imposing the right step-strategy; 1) first a focus on the individual development of agricultural land, then 2) massive support for large-style construction - but letting the companies fight internationally, and lastly 3) by lenient financial incentives. Most likely a simplication of many other factors, but interesting viewpoint when we look at the of the economic sectors in 2010 for the range of countries. Countries going from lowest to highest GDP.")
+      .text("This plot display the size of the three economic sectors - Agriculture, Industry and Service - for the SEA countries. A developing country can be distinguished from a developed country by the share of agriculture towards service; it can for example clearly be seen that Cambodia is dependent on its farmers, while opposite Malaysia only has a small portion in agriculture and the majority in Service. Singapore is an outlier, due to being a city state. But moving towards the status as a developed country is not easy, according to J.Studwell, 2013, How Asia Works, the Asian Tigers - Taiwan, South Korea, Singapore, and Hong Kong made their impressive steps forward by imposing the right step-strategy; 1) first a focus on the individual development of agricultural land, then 2) massive support for large-style construction - but letting the companies fight internationally, and lastly 3) by lenient financial incentives. ")
     var svg = d3.select("body")
       .append("svg")
       .attr("width", width + margin)

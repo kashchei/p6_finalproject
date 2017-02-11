@@ -13,14 +13,14 @@ function draw(data) {
       .text("Production Area Chart")
     d3.select("body")
       .append("p")
-      .text("This diagram gives the development in the past 35 years for selected countries. Succesfull countries - in terms of high GDP - have low Agricultural production, and majority in service sector. Philippines and Indonesia display similar charts - both countries seemingly having difficulties kickstarting their servicesector.")
+      .text("This diagram gives the development in the past 35 years for both countries. To me this plot explains the difference between why recessions hit them differently; Malaysia is mainly reliant on the service sector while Indonesia is having a hard time to kickstart its service sector, and dependent on its agricultural economic sector. Thereby Indonesia is still ranging as a sub-developed country in terms of GDP, but is also being less susceptible to economic crisis originated in the bank and finance world.")
+
     var svg = d3.select("body")
       .append("svg")
       .attr("width", width + margin)
       .attr("height", height + margin)
       .append('g')
       .attr('class','chart');
-
 
 /*
   Dimple.js Chart construction code

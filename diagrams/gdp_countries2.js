@@ -8,22 +8,25 @@ function draw(data) {
         width = 1400 - margin,
         height = 600 - margin;
 
-
     d3.select("body")
       .append("h1")
-      .text("Global Recessions - a peak into the South East Asian Economy")
+      .text("Economic development in South East Asia")
 
     d3.select("body")   
       .append("p")   
-      .text("Today we are more connected than ever globally, our economies are tangled together in ways only possible due to the progress made in logistics and technology; an interconnectedness that can clearly be seen when global financial recessions are taking place. But even though we are globally connected, each national economy handle the recessions differently. In the following I will zoom into the Asian region and in particular the countries of Indochina to see if we can learn something from looking at their economies through the glasses of the global recessions. The recessions are used due to the way they function like a cut that lays bare the bone for us to see what is behind.")
+      .text("Today we are more connected than ever globally, our economies are tangled together in ways only possible due to the progress made in logistics and technology. But even though we are globally connected, the national economies are quite different construed. ")
+
+    d3.select("body")   
+      .append("p")   
+      .text("The data for the following plots are all based on numbers from the World Banks Open Data project (http://data.worldbank.org/).")
 
     d3.select("body")
       .append("h2")
-      .text("GDP World Wide")
+      .text("GDP Numbers - South East Asia")
 
     d3.select("body")
       .append("p")
-      .text("When looking at graphs of GDP for regionsglobally, it is clear that the world is progressing. Historically, the Western countries have a headstart, but all regions have growing GDP. When displayed on top of the recessions, it is visible how the economies are in fact connected - they all slow down or even go downward in the aftermath of the recessions.")
+      .text("When looking at the GDP for the countries in South East Asia, Singapore stands out with the extremely high GDP. The global economic recessions - displayed as black boxes - are a good way to see the economic interconnectedness; especially the so-called 'Asian financial crisis' in the nineties show how the South East Asian countries are economically connected. Try removing Singapore from the plot (click on the Legend) to get the other nations stand out more clearly. I found it interesting how Malaysia had a much more positive trajectory than Indonesia.")
 
     var svg = d3.select("body")
       .append("svg")
@@ -32,6 +35,9 @@ function draw(data) {
       .append('g')
           .attr('class','chart');
 
+/*
+  Dimple.js Chart construction code
+*/
 // Recession line plut legend
     //recessions 2008 -financial crisis / 2000 energy crisis (global recessions: 1970: 1974–75,[5] 1980–83,[5] 1990–93,[6] 1998,[6] 2001–02,[6] and 2008–09.[7] According to Wikipedia https://en.wikipedia.org/wiki/Global_recession
     svg.append("svg:line") // Recession 1974-1975
@@ -61,18 +67,16 @@ function draw(data) {
         .attr("class", "legendtext")
         .text("Global financial recessions");
 
-/*
-  Dimple.js Chart construction code
-*/
-    var myChart = new dimple.chart(svg, data);
-    var x = myChart.addCategoryAxis("x", "Year");
-    var y = myChart.addMeasureAxis("y", "Number");
-    var m = myChart.addSeries("Country", dimple.plot.bubbles);
+    var myChart1 = new dimple.chart(svg, data);
+    var x = myChart1.addCategoryAxis("x", "Year");
+    var y = myChart1.addMeasureAxis("y", "Number");
+    var s = myChart1.addSeries("Country", dimple.plot.scatter);
+    var m = myChart1.addSeries("Country", dimple.plot.line);
     
-    var myLegend = myChart.addLegend(180, 50, 460, 300, "left");
-    myChart.draw();
+    var myLegend = myChart1.addLegend(180, 50, 460, 300, "left");
+    myChart1.draw();
 
-    myChart.legends = [];
+    myChart1.legends = [];
       svg.selectAll("title_text")
           .data(["Click legend to show/hide a Region"])
           .enter()
@@ -88,7 +92,7 @@ function draw(data) {
 Create clickcable filter
 */
   // Get a unique list of Owner values to use when filtering
-  var filterValues = dimple.getUniqueValues(data, "Country");
+  var filterValues = dimple.getUniqueValues(data, "Country"); //["Malaysia","Indonesia"]
   // Get all the rectangles from our now orphaned legend
   myLegend.shapes.selectAll("rect")
     // Add a click event to each rectangle
@@ -114,14 +118,14 @@ Create clickcable filter
       // Update the filters
       filterValues = newFilters;
       // Filter the data
-      myChart.data = dimple.filterData(data, "Country", filterValues);
+      myChart1.data = dimple.filterData(data, "Country", filterValues);
       // Passing a duration parameter makes the chart animate. Without
       // it there is no transition
-      myChart.draw(800);
+      myChart1.draw(800);
     });
 };
 
-data = "data/1_GDP_development.csv";
+data = "data/1_GDP_development2.csv";
 
 function convert(d) {
   return {

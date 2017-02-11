@@ -10,11 +10,11 @@ function draw(data) {
 
     d3.select("body")
       .append("h2")
-      .text("Indonesia and Philippines effects")
+      .text("Indonesia and Malaysia - factors affecting the GDP")
 
     d3.select("body")
       .append("p")
-      .text("The last plot lets you compare several indicators to see how they interact with the changing GDP of selected South East Asian countries. Select a category to see how it develops through the past decade.")
+      .text("The last plot makes it possible to see several indicators and explore how they compare with the changing GDP of Malaysia and Indonesia. Are there any indicators that you think have an impact on their GDP?")
 
     var svg = d3.select("body")
       .append("svg")
@@ -95,9 +95,9 @@ function draw(data) {
           // Draw the main chart
           var myChart5 = new dimple.chart(svg, data);
           myChart5.setBounds(140, 50, 900, 500);
-          var x2 = myChart5.addCategoryAxis("x", "Year");
+          var x2 = myChart5.addCategoryAxis("x", ["Year","Country"]);
           myChart5.addMeasureAxis("y", "Value");
-          myChart5.addSeries("Country", dimple.plot.bubble);
+          myChart5.addSeries("Country", dimple.plot.bar);
           myChart5.addLegend(140, 10, 410, 60);
 
           var y2 = myChart5.addMeasureAxis("y", "GDP");
