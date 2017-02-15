@@ -37,7 +37,7 @@ function draw(data) {
     
     // Set up storyboard for animating through time series
     var myStoryboard = myChart2.setStoryboard("Country");
-    myStoryboard.frameDuration = 4000;
+    myStoryboard.frameDuration = 8000;
    
 
 // Recession line plut legend

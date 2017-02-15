@@ -40,7 +40,7 @@ function draw(data) {
           var firstTick = true;
 
           // Place the indicator bar chart to the right
-          indicator.setBounds(1130, 49, 153, 311);
+          indicator.setBounds(1130, 49, 233, 311);
 
           // Add values along the y axis
           var y = indicator.addCategoryAxis("y", "Series");

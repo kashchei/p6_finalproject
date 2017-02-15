@@ -1,8 +1,24 @@
 Notes Feedback
 
 07-02-2017 
-Comments from NEB:
+Comments from NEB in-house:
+
 > Need more clear red line for story
 > Spelling errors
 > In graph 3 - show legend for black boxes
 > In general make text more easy understandable
+
+14-02-2017
+Comments from danielhavir_271822h on Udacity forum
+
+Great job, Jonas!
+
+My comments:
+Story:
+Your visualization nicely depicts the differences between rather service-oriented Malaysia and rather agricultural Indonesia. As a reader, I was able to complete the whole picture. In my opinion, the finding in the data is obvious and clearly communicated. The only detail I would point out is to add context to the graphs in the bottom (DeathRate, FDI, Unemployment), I didn't understand what for example Unemployment value of 6 means. Maybe as a bullet list with short description and value explanation
+
+Design:
+Chart types and colors are appropriate and helped me get oriented in the story. The animation (switch between the two countries) makes it a little difficult to hover over a specific point to see the corresponding value (e.g. EmployAgriculture value in Malaysia in 1990). Slower animation may be a better choice (up to you to experiment and decide). Lastly, the Y-Axis lable of the GDP Graph wouldn't make sense without context, I suggest switch the axis label to "GDP" instead of "number".
+
+Anyway, your visualization is very nice! Good luck with your project review
+

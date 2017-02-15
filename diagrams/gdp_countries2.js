@@ -69,7 +69,7 @@ function draw(data) {
 
     var myChart1 = new dimple.chart(svg, data);
     var x = myChart1.addCategoryAxis("x", "Year");
-    var y = myChart1.addMeasureAxis("y", "Number");
+    var y = myChart1.addMeasureAxis("y", "GDP");
     var s = myChart1.addSeries("Country", dimple.plot.scatter);
     var m = myChart1.addSeries("Country", dimple.plot.line);
     
@@ -129,7 +129,7 @@ data = "data/1_GDP_development2.csv";
 
 function convert(d) {
   return {
-    Number: +d.Number,
+    GDP: +d.Number,
     Year: +d.Year,
     Country: d.Country
   }
