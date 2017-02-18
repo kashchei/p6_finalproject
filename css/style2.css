@@ -1,0 +1,145 @@
+circle {
+  opacity:0.3;
+}
+
+.axis {
+      font-family: calibri;
+      font-size: 0.6em;
+}
+
+/*div:not(#div1) {
+    display: none;
+}*/
+
+path.domain {
+  stroke: black;
+  stroke-width: 1px;
+  fill:none;
+}
+
+h1 {
+  font-family: calibri;
+  text-align: left;
+  margin-left: 80px;
+  margin-top: 40px;
+}
+
+
+h2 {
+  font-family: calibri;
+  text-align: left;
+  margin-left: 80px;
+  margin-top: 40px;
+}
+
+path.dimple-world {
+      stroke-width: 4px;
+      fill:none;
+      stroke: orange;
+      opacity: 0.5;
+      stroke-dasharray: 5.5;
+    }
+
+text.legendtext {
+  font-family: calibri;
+  stroke-width: 1px;
+  font-size: 11px;
+}
+
+
+p {
+  font-family: calibri;
+  font-size: 0.9em;
+  margin-left: 80px;
+}
+
+ptop {
+  font-family: calibri;
+  font-size: 1.1em;
+  font-style: italic;
+  margin-left: 80px;
+
+}
+
+ul {
+  margin: 20px 40px;
+    font-family: calibri;
+    color: white;
+}
+
+ul li {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    width: 230px;
+    margin: 5px 1px 0 0;
+    text-indent: 35px;
+    position: relative;
+}
+
+ul li:before {
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    left: -2px;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #fff;
+    z-index: 0;
+}
+
+ul li:first-child:before {
+    border-color: transparent;
+}
+
+ul li a:after {
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: -15px;
+    border-style: solid;
+    border-width: 15px 0 15px 15px;
+    border-color: transparent transparent transparent #ccc;
+    z-index: 10;
+}
+
+ul li.active a {
+    background: orange;
+    z-index: 100;
+}
+
+ul li.active a:after {
+    border-left-color: orange;
+}
+
+ul li a {
+    display: block;
+    background: #ccc;
+}
+
+ul li a:hover {
+    background: gray;
+}
+
+ul li a:hover:after {
+    border-color: transparent transparent transparent gray; 
+}
+
+a:link {
+    color: #618685;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #618685;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: orange;
+}

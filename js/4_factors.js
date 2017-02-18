@@ -1,42 +1,40 @@
 function draw(data) {
 
-/*
-  D3.js setup code
-*/
+//  D3.js setup code
+
     "use strict";
-    var margin = 4475,
+    var margin = 75,
         width = 1400 - margin,
         height = 600 - margin;
 
-    d3.select("body")
+    d3.select("#div4")
       .append("h2")
-      .text("Indonesia and Malaysia - factors affecting the GDP")
+      .text("4. Factors affecting the GDP")
 
-    d3.select("body")
-      .append("p")
-      .text("The last plot makes it possible to see several indicators and explore how they compare with the changing GDP of Malaysia and Indonesia. Are there any indicators that you think have an impact on their GDP?")
+    d3.select("#div4")
+      .append("ptop")
+      .text("Any other factors that makes Indonesia and Malaysia take different paths?")
 
-    var svg = d3.select("body")
+    var svg = d3.select("#div4")
       .append("svg")
       .attr("width", width + margin)
       .attr("height", height + margin)
       .append('g')
       .attr('class','chart');
 
-/*
-  Dimple.js Chart construction code
-*/
+    d3.select("#div4")
+      .append("p")
+      .text("The last plot makes it possible to see several indicators and explore how they compare with the changing GDP of Malaysia and Indonesia. Are there any indicators that you think have an impact on their GDP?")
+
+//  Dimple.js Chart construction code
 
           // Create the indicator chart on the right of the main chart
           var indicator = new dimple.chart(svg, data);
-
-          // Pick blue as the default and orange for the selected month
           var defaultColor = indicator.defaultColors[0];
           var indicatorColor = indicator.defaultColors[2];
 
           // The frame duration for the animation in milliseconds
           var frame = 2000;
-
           var firstTick = true;
 
           // Place the indicator bar chart to the right
@@ -44,7 +42,6 @@ function draw(data) {
 
           // Add values along the y axis
           var y = indicator.addCategoryAxis("y", "Series");
-          //y.addOrderRule("Country", true);
 
           // Use sales for bar size and hide the axis
           var x = indicator.addMeasureAxis("x", "Series");
@@ -68,9 +65,7 @@ function draw(data) {
                   .style("font-size", "11px")
                   .attr("transform", "translate(18, 0.5)");
 
-          // This block simply adds the legend title. I put it into a d3 data
-          // object to split it onto 2 lines.  This technique works with any
-          // number of lines, it isn't dimple specific.
+          // This block simply adds the legend title.
           svg.selectAll("title_text")
                   .data(["Click bar to select",
                       "and pause. Click again",
@@ -98,8 +93,7 @@ function draw(data) {
           var x2 = myChart5.addCategoryAxis("x", ["Year","Country"]);
           myChart5.addMeasureAxis("y", "Value");
           myChart5.addSeries("Country", dimple.plot.bar);
-          myChart5.addLegend(140, 10, 410, 60);
-
+          myChart5.addLegend(140, 10, 510, 60);
           var y2 = myChart5.addMeasureAxis("y", "GDP");
           myChart5.addSeries("Country", dimple.plot.line,[x2,y2]);
 
@@ -134,7 +128,7 @@ function draw(data) {
           // On tick of the main charts storyboard
           function onTick(e) {
               if (!firstTick) {
-                  // Color all shapes the same
+                  // Color all shapes the same color
                   s.shapes
                           .transition()
                           .duration(frame / 2)
