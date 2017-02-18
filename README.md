@@ -2,10 +2,21 @@
 ##Summary##
 This data visualization is based on World Bank data on GDP and economic factors with the added context of timeperiods of economic recessions. I try through the visualization to show the different trajectories of the Malaysian and the Indonesian economies (as displayed through their GDP). Ultimately showing that a difference in development of production sectors seems to be a factor.
 
-##Design##
-I picked Dimple.js as my tool due to farely quick learning curve and since the package provided adequate plots for my intentions.
-I used the first three plots for telling my story, and then give the fourth plot letting the user explore.
-The recessions was added on top of the plots - and although they are not strictly necessary for showing the connection between production sectors and GDP development, they in my eyes provide a link from the cold numbers to the real world.
+##Design decisions##
+*Dataset and plot:*
+* Picked dimple.js as my tool due to farely quick learning curve and since the package provided adequate plots for my intentions.
+* I choose to make four different plots to build my story
+*Chart types:*
+* GDP was consistently set as a line diagram (plot 1,2,4)
+* While barcharts where used to compare other economic factors (plot 2,4)
+* To provide a both visual nice and illustrative overview of the production sectors through time, a area chart was picked.
+*Story considerations:*
+* I used the first three plots for telling my story, and then give the fourth plot letting the user explore.
+* The recessions was added on top of the plots - and although they are not strictly necessary for showing the connection between production sectors and GDP development, they in my eyes provide a link from the cold numbers to the real world.
+*Interactivity / animation:*
+* Plot 1 was given a legend that could be selected to show/hide specific countries
+* Plot 3 was animated - switching between the two countries. The transition becomes the comparison.
+* Plot 4 had interactivity added for selecting new variabels to display in the plot
 
 ##Feedback##
 ###07-02-2017 Comments from NEB (in-house):###
