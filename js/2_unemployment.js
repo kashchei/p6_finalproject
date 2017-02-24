@@ -26,9 +26,7 @@ function draw(data) {
     .append("p")
     .text("The plot compares Indonesia and Malaysia through the past decade. The unemployment is displayed in bars, and the GDP in the line graph - and the financial recession in 2008 is marked by the black bar. Malaysias GDP is much harder hit by the recession and is also experiencing higher unemployment right after.")
 
-
 // Dimple.js Chart construction code
-
 
   // Recession line plus legend
   svg2.append("svg:line") // Recession 2008-2009
