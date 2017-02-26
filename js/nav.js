@@ -1,6 +1,5 @@
 // General layout
 
-
 // load js to be ready for interaction
 $(document).ready(function () {
 	$("a[data-toggle]").on("click", function(e) {
@@ -10,3 +9,4 @@ $(document).ready(function () {
 	  $(selector).show();
 	});
 });
+

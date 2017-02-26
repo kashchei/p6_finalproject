@@ -39,7 +39,7 @@ data_tidy_spreadout <- dcast(data_tidy, Country+Year~Series_code)
 
 # Name all data fields
 
-colnames(data_tidy_spreadout) <- c("Country","Year","FDI (in USD)","Electricity Access","Electric Power Consumption (kWh)","BankNonperformingLoans","BankCapitaltoAssetsRatio","BorrowersCommercialBank","DomesticCredittoPrivateSector","BankLiquidReservestoBankAssetsRatio","Ease of Business","Export of Goods and Services (% of GDP)", "AgraTotalValueAdded","ServiceValueAdded","IndustryValueAdded","AdjustedNetNationalIncome","GDP Per Capita","GDPPerCapitaPP","AdultLiteracy","Gini","Employment Agriculture","Employment Industry","Employment Service","Unemployment (% of total employment)","Death Rate (per thousand people)","Population (in millions)")
+colnames(data_tidy_spreadout) <- c("Country","Year","Foreign Direct Investment (in USD)","Electricity Access","Electric Power Consumption (kWh)","BankNonperformingLoans","BankCapitaltoAssetsRatio","BorrowersCommercialBank","DomesticCredittoPrivateSector","BankLiquidReservestoBankAssetsRatio","Ease of Business","Export of Goods and Services (% of GDP)", "AgraTotalValueAdded","ServiceValueAdded","IndustryValueAdded","AdjustedNetNationalIncome","GDP Per Capita","GDPPerCapitaPP","AdultLiteracy","Gini","Employment Agriculture","Employment Industry","Employment Service","Unemployment (% of total employment)","Death Rate (per thousand people)","Population (in millions)")
 data_tidy_spreadout.df <- as.data.frame(data_tidy_spreadout)
 
 #############################################
@@ -110,7 +110,7 @@ write.csv(plot4_tidyed_filtered2, file ="4_Economic_sectors_cont.csv")
 #############################################
 # Creating file for Plot 5 - Finance
 #############################################
-plot5_selection <- data_tidy_spreadout.df[,c("Year","Country","GDP Per Capita","Death Rate (per thousand people)","Electric Power Consumption (kWh)","Unemployment (% of total employment)","Population (in millions)","Ease of Business","Export of Goods and Services (% of GDP)","FDI (in USD)")]
+plot5_selection <- data_tidy_spreadout.df[,c("Year","Country","GDP Per Capita","Death Rate (per thousand people)","Electric Power Consumption (kWh)","Unemployment (% of total employment)","Population (in millions)","Ease of Business","Export of Goods and Services (% of GDP)","Foreign Direct Investment (in USD)")]
 
 plot5_tidyed <- tidyr::gather(plot5_selection, 'Series','Production',3:10)
 

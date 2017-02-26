@@ -55,7 +55,7 @@ function draw(data) {
     .attr("x1", 190).attr("y1", 105).attr("x2", 190).attr("y2", 125); // - line placement
   svg1.append("text") // legend text
     .attr("class","legendtext")
-    .attr("x", 203).attr("y", 118)<
+    .attr("x", 203).attr("y", 118)
     .attr("class", "legendtext")
     .text("Global financial recessions");
 

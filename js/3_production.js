@@ -26,6 +26,7 @@ function draw(data) {
     .append("p")
     .text("This diagram gives the development in the past 35 years for both countries. To me this plot show why recessions hit them differently; Malaysia is mainly reliant on the service sector while Indonesia is having a hard time to kickstart its service sector, and dependent on its agricultural economic sector. Thereby Indonesia is still ranging as a sub-developed country in terms of GDP, but is also being less susceptible to economic crisis originated in the bank and finance world.")
 
+
 //  Dimple.js Chart construction code
 
   var myChart4 = new dimple.chart(svg,data);
@@ -41,22 +42,39 @@ function draw(data) {
   new dimple.color("#80B1D3"),
   new dimple.color("#FB8072")
   ]; 
-  myChart4.addSeries("Series", dimple.plot.area);
+  var chart1 = myChart4.addSeries("Series", dimple.plot.area);
   myChart4.addSeries("Country",dimple.plot.line,[x,y2]);
 
   var myLegend = myChart4.addLegend(680, 40, 460, 300, "right");
   
   // Creation of animation
-  var myStoryboard = myChart4.setStoryboard("Country");
-  myChart4.storyboard = new dimple.storyboard(myChart4, "Country");
+  var myStoryboard4 = myChart4.setStoryboard("Country");
+  //myChart4.storyboard = new dimple.storyboard(myChart4, "Country");
 
   // The frame duration for the animation in milliseconds
-  var frame = 4000;
+  var frame = 8000;
+
+  //Pause aninmation
+  d3.select("#stop").on("click", function(e) {
+    myStoryboard4.pauseAnimation();
+  });
+
+  //Start aninmation
+  d3.select("#start").on("click", function(e) {
+    myStoryboard4.startAnimation();
+  });
+
 
   myChart4.draw();
 
   // Orphan legend after first draw
   myChart4.legends = [];
+
+
+ // myLegend.addEventHandler("click",pause);
+//object.addEventHandler("click", myScript);
+
+
 };
 
 data4 = "data/4_Economic_sectors_cont.csv";
@@ -71,3 +89,4 @@ d3.csv(data4, function(d) {
   };
 },
   draw);
+

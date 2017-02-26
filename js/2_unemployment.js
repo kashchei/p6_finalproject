@@ -47,9 +47,9 @@ function draw(data) {
   var x = myChart2.addCategoryAxis("x", ["Year","Country"]);
   var x2 = myChart2.addCategoryAxis("x", "Year"); 
   var y1 = myChart2.addMeasureAxis("y", "Unemployment");
-  var y2 = myChart2.addMeasureAxis("y", "GDPPerCapita");
+  var y2 = myChart2.addMeasureAxis("y", "GDP");
   x2.hidden = true;
-  y2.hidden = true;
+  //y2.hidden = true;
 
   var t = myChart2.addSeries("Country", dimple.plot.line,[x2,y2]);
   var s = myChart2.addSeries(["Country"], dimple.plot.bar,[x,y1]);
@@ -63,8 +63,8 @@ data2 = "data/2_gdp_animated.csv";
 d3.csv(data2, function(d) { 
   return {
     Year: +d.Year,
-    Unemployment: +d.Unemployment,
-    GDPPerCapita: +d.GDPPerCapita,
+    Unemployment: +d["Unemployment (% of total employment)"],
+    GDP: +d["GDP Per Capita"],
     Country: d.Country,
     Population: +d.Population
   };

@@ -13,13 +13,26 @@ path.domain {
   fill:none;
 }
 
+#start {
+  margin-left: 160px;
+  margin-top: 210px;
+  z-index: 2;
+  position: absolute;
+}
+
+#stop {
+  margin-left: 160px;
+  margin-top: 170px;
+  z-index: 2;
+  position: absolute;
+}
+
 h1 {
   font-family: calibri;
   text-align: left;
   margin-left: 80px;
   margin-top: 40px;
 }
-
 
 h2 {
   font-family: calibri;
@@ -28,12 +41,12 @@ h2 {
   margin-top: 40px;
 }
 
-path.dimple-world {
+path.dimple-malaysia {
   stroke-width: 4px;
-  fill:none;
-  stroke: orange;
-  opacity: 0.5;
-  stroke-dasharray: 5.5;
+}
+
+path.dimple-indonesia {
+  stroke-width: 4px;
 }
 
 text.legendtext {
@@ -41,7 +54,6 @@ text.legendtext {
   stroke-width: 1px;
   font-size: 11px;
 }
-
 
 p {
   font-family: calibri;
@@ -54,7 +66,6 @@ ptop {
   font-size: 1.1em;
   font-style: italic;
   margin-left: 80px;
-
 }
 
 ul {

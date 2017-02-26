@@ -87,16 +87,6 @@ function draw(data) {
     .style("stroke", function (d) { return (d.y === 2000 ? indicatorColor.stroke : defaultColor.stroke) })
     .style("opacity", 0.4);
 
-  // Draw the main chart
-  var myChart5 = new dimple.chart(svg, data);
-  myChart5.setBounds(140, 50, 900, 500);
-  var x2 = myChart5.addCategoryAxis("x", ["Year","Country"]);
-  myChart5.addMeasureAxis("y", "Value");
-  myChart5.addSeries("Country", dimple.plot.line);
-  myChart5.addLegend(140, 10, 510, 60);
-  //var y2 = myChart5.addMeasureAxis("y", "GDP");
-  //myChart5.addSeries("Country", dimple.plot.line,[x2,y2]);
-
   // Recession line plus legend
   svg.append("svg:line") // Recession 2008-2009
     .style("fill", "black").style("opacity",0.2).attr("stroke-width", 165).attr("stroke", "black") // look
@@ -109,6 +99,17 @@ function draw(data) {
     .attr("x", 200).attr("y", 85)
     .attr("class", "legendtext")
     .text("Global financial recession 2008-2009");
+
+  // Draw the main chart
+  var myChart5 = new dimple.chart(svg, data);
+  myChart5.setBounds(140, 50, 900, 500);
+  var x2 = myChart5.addCategoryAxis("x", ["Year","Country"]);
+  var y = myChart5.addMeasureAxis("y", "Value");
+  myChart5.addSeries("Country", dimple.plot.line);
+  myChart5.addLegend(140, 10, 510, 60);
+  //var y2 = myChart5.addMeasureAxis("y", "GDP");
+  //myChart5.addSeries("Country", dimple.plot.line,[x2,y2]);
+
 
   // Add a storyboard to the main chart and set the tick event
   var story = myChart5.setStoryboard("Series", onTick);
@@ -132,8 +133,10 @@ function draw(data) {
     // If it is already selected resume the animation
     // otherwise pause and move to the selected 
     if (e.yValue === story.getFrameValue()) {
-      story.startAnimation();
+      y.title = e.yValue;
+      //story.startAnimation();
     } else {
+      y.title = e.yValue;
       story.goToFrame(e.yValue);
       story.pauseAnimation();
     }
@@ -147,6 +150,7 @@ function draw(data) {
         .duration(frame / 2)
         .style("fill", function (d) { return (d.y === e ? indicatorColor.fill : defaultColor.fill) })
         .style("stroke", function (d) { return (d.y === e ? indicatorColor.stroke : defaultColor.stroke) });
+    //  y.title = e;
     }
     firstTick = false;
   }
