@@ -40,6 +40,11 @@ Chart types and colors are appropriate and helped me get oriented in the story. 
 Suggestions for changing graphs in several ways. Structuring and coloring.
 For full review - see udacity review.
 
+###22-02-2017 Comments from Note udacity review###
+Plot 2 - if you are showing GDP you need the second y axis.
+Plot 3 - if you are going to keep the animation you need to add a way of stopping it. It's very frustrating as it doesn't stay still long enough to work out what's going on - colour coding is great though!
+Plot 4 - three things: it would be helpful to change the Y-axis label when the graph changes instead of just 'value', Electric Power Consumption data is a bit off (why the sudden plunge in 2014). What is FDI?
+All plots - watch where you put the 'global financial recession' key. Sometimes it overlaps with the graph.
 
 ##Resources##
 * Dimple.js resource: http://dimplejs.org
